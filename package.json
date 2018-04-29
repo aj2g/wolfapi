@@ -10,7 +10,7 @@
         "spec": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz",
         "type": "remote"
       },
-      "/home/ec2-user/environment/node_modules"
+      "/home/ec2-user/environment/wolfram-alpha-api"
     ]
   ],
   "_from": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz",
@@ -33,7 +33,7 @@
   "_shasum": "eea1ba12d531b2895f22b11fcf5d6788877f9640",
   "_shrinkwrap": null,
   "_spec": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz",
-  "_where": "/home/ec2-user/environment/node_modules",
+  "_where": "/node_modules",
   "author": "Cody Woodard <codyw@wolfram.com>",
   "dependencies": {
     "wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
@@ -61,7 +61,7 @@
   "scripts": {
     "create-docs": "jsdoc lib/WolframAlphaAPI.js --readme README.md --template node_modules/minami/",
     "lint": "eslint .; exit 0",
-    "test": "mocha --timeout 10000"
+    "test": "web: node test.js"
   },
   "version": "1.0.0-rc.1",
   "directories": {
