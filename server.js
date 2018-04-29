@@ -5,7 +5,8 @@ http.createServer(function (req, res) {
   const { headers, method, url } = req;
   res.writeHead(200, {'Content-Type': 'text/html'});
   console.log(url);
-  var call = url.substr(1);
+  //var call = url.substr(1);
+  var userInput = "prove by induction (3n)! > 3^n (n!)^3 for n>0";
   
   
   const WolframAlphaAPI = require('wolfram-alpha-api');
@@ -18,9 +19,9 @@ http.createServer(function (req, res) {
     }
     else{
       waApi.getFull ({
-        input: call,  
+        input: userInput,  
         podstate: 'Result__Step-by-step+solution',
-        format: 'plaintext',
+        format: 'mathml',
       }).then((queryresult) => {
         console.log(queryresult.pods[0].subpods[0].plaintext)
       }).catch(console.error);
