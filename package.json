@@ -61,7 +61,8 @@
   "scripts": {
     "create-docs": "jsdoc lib/WolframAlphaAPI.js --readme README.md --template node_modules/minami/",
     "lint": "eslint .; exit 0",
-    "test": "web: node test.js"
+    "test": "web: node test.js",
+    "start": "node server.js"
   },
   "version": "1.0.0-rc.1",
   "directories": {
