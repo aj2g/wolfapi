@@ -17,8 +17,8 @@ http.createServer(function (req, res) {
       res.end('<html><body><h1>There was an error please refresh.</h1></body></html>');
     }
     else{
-      waApi.getFull({
-        input: 'prove by induction (3n)! > 3^n (n!)^3 for n>0',  
+      waApi.getFull(call).then((queryresult) => {
+        input: 'prove by induction '+ call,  
         podstate: 'Solution__Step-by-step solution',
         format: 'mathml',
       }).then((queryresult) => {
