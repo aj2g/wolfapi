@@ -17,8 +17,8 @@ http.createServer(function (req, res) {
       res.end('<html><body><h1>There was an error please refresh.</h1></body></html>');
     }
     else{
-      waApi.getFull(call).then((queryresult) => {
-        //input: 'prove by induction '+ call,  
+      waApi.getFull ({
+        input: call,  
         podstate: 'Solution__Step-by-step solution',
         format: 'mathml',
       }).then((queryresult) => {
