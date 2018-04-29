@@ -18,13 +18,13 @@ http.createServer(function (req, res) {
       res.end('<html><body><h1>There was an error please refresh.</h1></body></html>');
     }
     else{
-      waApi.getFull ({
+      waApi.getFull({
         input: userInput,  
         podstate: 'Result__Step-by-step+solution',
         format: 'mathml',
       }).then((queryresult) => {
-        console.log(queryresult.pods[0].subpods[0].plaintext)
-      }).catch(console.error)
+      console.log(queryresult.pods[0].subpods[0].plaintext)
+      }).catch(console.error)   
     }
   }
 }).listen(process.env.PORT || 5000);
