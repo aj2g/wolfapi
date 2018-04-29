@@ -14,7 +14,7 @@ http.createServer(function (req, res) {
 
   API();
   function API(){
-    if(call ===""){
+    if(userInput ===""){
       res.end('<html><body><h1>There was an error please refresh.</h1></body></html>');
     }
     else{
