@@ -18,7 +18,7 @@ http.createServer(function (req, res) {
     }
     else{
       waApi.getFull(call).then((queryresult) => {
-        input: 'prove by induction '+ call,  
+        //input: 'prove by induction '+ call,  
         podstate: 'Solution__Step-by-step solution',
         format: 'mathml',
       }).then((queryresult) => {
