@@ -1,1 +1,1 @@
-web: node ./wolfram-alpha-api/server.js
+web: node server.js

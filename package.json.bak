@@ -35,9 +35,7 @@
   "_spec": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz",
   "_where": "/home/ec2-user/environment/node_modules",
   "author": "Cody Woodard <codyw@wolfram.com>",
-  "dependencies": {
-    "wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
-  },
+  "dependencies": {},
   "description": "Wolfram|Alpha API Libraries",
   "devDependencies": {
     "chai": "^3.5.0",
