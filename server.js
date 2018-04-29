@@ -19,8 +19,8 @@ http.createServer(function (req, res) {
     else{
       waApi.getFull ({
         input: call,  
-        podstate: 'Solution__Step-by-step solution',
-        format: 'mathml'
+        podstate: 'Result__Step-by-step+solution',
+        format: 'mathml',
       }).then((queryresult) => {
         console.log(queryresult.pods[0].subpods[0].plaintext)
       }).catch(console.error);
