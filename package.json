@@ -33,7 +33,7 @@
   "_shasum": "eea1ba12d531b2895f22b11fcf5d6788877f9640",
   "_shrinkwrap": null,
   "_spec": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz",
-  "_where": "/node_modules",
+  "_where": "/",
   "author": "Cody Woodard <codyw@wolfram.com>",
   "dependencies": {
     "wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
