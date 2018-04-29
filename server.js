@@ -23,7 +23,14 @@ http.createServer(function (req, res) {
         podstate: 'Result__Step-by-step+solution',
         format: 'mathml',
       }).then((queryresult) => {
-      console.log(queryresult.pods[0].subpods[0].plaintext)
+        const pods = queryresult.pods;
+        const output = pods.map((pod) => {
+        const subpodContent = pod.subpods.map(subpod =>
+        `alt="${subpod.img.alt}">`
+      ).join('\n');
+        return `${pod.title}\n${subpodContent}`;
+      }).join('\n');
+        res.end(output);
       }).catch(console.error);   
     }
   }
