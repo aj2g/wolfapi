@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
         format: 'mathml',
       }).then((queryresult) => {
       console.log(queryresult.pods[0].subpods[0].plaintext)
-      }).catch(console.error)   
+      }).catch(console.error);   
     }
   }
 }).listen(process.env.PORT || 5000);
