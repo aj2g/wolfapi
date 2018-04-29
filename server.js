@@ -8,7 +8,7 @@ http.createServer(function (req, res) {
   var call = url.substr(1);
   
   
-  const WolframAlphaAPI = require('/node_modules/wolfram-alpha-api');
+  const WolframAlphaAPI = require('wolfram-alpha-api');
   const waApi = WolframAlphaAPI('U72E65-ARQERXR86Y');
 
   API();
