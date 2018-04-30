@@ -1,5 +1,4 @@
 //This module was added when thinking about comparing solutions in mathml format instead of latex
-import { createServer } from 'npm-http-server'
 import ascii2mathml from 'ascii2mathml';
 
 //cluster is to maximize perfomance by utilizing all processors for heroku

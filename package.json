@@ -36,7 +36,6 @@
   "_where": "/",
   "author": "Cody Woodard <codyw@wolfram.com>",
   "dependencies": {
-    "npm-http-server": "^4.3.0",
     "asciimath-to-latex": "^0.3.2",
     "cluster-client": "^2.1.0",
     "wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
