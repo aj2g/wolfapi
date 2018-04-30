@@ -44,7 +44,7 @@ if (cluster.isMaster) {
           input: userInput,  
           podstate: 'Step-by-step',
           appid: waApi,
-          format: 'image',
+          format: 'plaintext',
           output: 'json',
           width: '500'
         }).then(console.log, console.error);   
