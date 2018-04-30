@@ -47,9 +47,7 @@ if (cluster.isMaster) {
           format: 'mathml',
           output: 'xml',
           width: '500'
-        }).then((queryresult) => {
-          console.log(queryresult.pods[0].subpods[0].plaintext)
-        }).catch(console.error);   
+        }).then(console.log, console.error);   
       }
     }
 }).listen(process.env.PORT || 5000);
