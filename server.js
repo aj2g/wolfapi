@@ -51,7 +51,7 @@ if (cluster.isMaster) {
           podstate: 'Step-by-step',
           appid: waApi,
           format: 'mathml',
-          //output: 'string',
+          output: 'json',
           width: '500'
         }).then(console.log, console.error);   
       }
