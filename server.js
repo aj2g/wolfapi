@@ -29,4 +29,4 @@ var server = http.createServer(function (req, res) {
   }
 }).listen(process.env.PORT || 5000);
 
-server.timeout= 10000;
+server.timeout= 100000;
