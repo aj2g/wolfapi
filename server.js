@@ -58,5 +58,5 @@ if (cluster.isMaster) {
     }
 }).listen(process.env.PORT || 5000);
 
-server.timeout= 10000;
+server.timeout= 30000;
 }
