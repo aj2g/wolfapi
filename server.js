@@ -36,6 +36,7 @@ if (cluster.isMaster) {
           input: userInput,  
           podstate: 'Result__Step-by-step+solution',
           format: 'plaintext',
+          output: 'json',
         }).then((queryresult) => {
         console.log(queryresult.pods[0].subpods[0].plaintext)
         }).catch(console.error);   
