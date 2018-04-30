@@ -1,4 +1,4 @@
-import ascii2mathml from 'ascii2mathml';
+//import ascii2mathml from 'ascii2mathml';
 
 //cluster is to maximize perfomance by utilizing all processors for heroku
 const cluster = require('cluster');
