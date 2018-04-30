@@ -63,7 +63,7 @@
   "scripts": {
     "create-docs": "jsdoc lib/WolframAlphaAPI.js --readme README.md --template node_modules/minami/",
     "lint": "eslint .; exit 0",
-    "ascii2mathml": "ascii2mathml.default",
+    "ascii2mathml": "node node_modules/ascii2mathml/node_modules/ascii2mathml.js",
     "test": "web: node server.js",
     "start": "node server.js"
   },
