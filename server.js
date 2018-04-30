@@ -42,7 +42,7 @@ if (cluster.isMaster) {
 
     API();
     function API(){
-      if(userInput ===""){
+      if(userInput ==""){
         res.end('<html><body><h1>There was an error please refresh.</h1></body></html>');
       }
       else{
@@ -51,7 +51,7 @@ if (cluster.isMaster) {
           podstate: 'Step-by-step',
           appid: waApi,
           format: 'mathml',
-          output: 'json',
+          //output: 'string',
           width: '500'
         }).then((queryresult) => {
           const pods = queryresult.pods;
@@ -68,4 +68,4 @@ if (cluster.isMaster) {
 }).listen(process.env.PORT || 5000);
 
 server.timeout= 10000;
-}
+//}
