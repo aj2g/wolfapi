@@ -1,3 +1,5 @@
+import ascii2mathml from 'ascii2mathml';
+
 //cluster is to maximize perfomance by utilizing all processors for heroku
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
@@ -8,7 +10,7 @@ var url = require('url');
 
 //mathml library
 //var mathml = ascii2mathml(asciimath [, options]);
-const myMathML = require('ascii2mathml');
+//const myMathML = require('ascii2mathml');
 
 //Distribute process load
 if (cluster.isMaster) {
