@@ -21,16 +21,9 @@ http.createServer(function (req, res) {
       waApi.getFull({
         input: userInput,  
         podstate: 'Result__Step-by-step+solution',
-        format: 'mathml',
+        format: 'plaintext',
       }).then((queryresult) => {
-        const pods = queryresult.pods;
-        const output = pods.map((pod) => {
-        const subpodContent = pod.subpods.map(subpod =>
-        `alt="${subpod.img.alt}">`
-      ).join('\n');
-        return `${pod.title}\n${subpodContent}`;
-      }).join('\n');
-        res.end(output);
+        console.log(queryresult.pods[0].subpods[0].plaintext)
       }).catch(console.error);   
     }
   }
