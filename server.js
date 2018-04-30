@@ -42,10 +42,10 @@ if (cluster.isMaster) {
       else{
         waApi.getFull({
           input: userInput,  
-          podstate: 'Result__Step-by-step+solution',
+          podstate: 'Step-by-step',
           appid: waApi,
-          format: 'mathml',
-          output: 'xml',
+          format: 'image',
+          output: 'json',
           width: '500'
         }).then(console.log, console.error);   
       }
