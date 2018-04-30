@@ -36,6 +36,14 @@
   "_where": "/",
   "author": "Cody Woodard <codyw@wolfram.com>",
   "dependencies": {
+<<<<<<<<< saved version
+    "asciimath-to-latex": "^0.3.2",
+    "cluster-client": "^2.1.0",
+    "npm-http-server": "^4.3.0",
+=========
+    "asciimath-to-latex": "^0.3.2",
+    "cluster-client": "^2.1.0",
+>>>>>>>>> local version
     "wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
   },
   "description": "Wolfram|Alpha API Libraries",
@@ -62,6 +70,7 @@
     "create-docs": "jsdoc lib/WolframAlphaAPI.js --readme README.md --template node_modules/minami/",
     "lint": "eslint .; exit 0",
     "test": "web: node server.js",
+    "heroku-prebuild": "echo This runs afterwards.",
     "start": "node server.js"
   },
   "version": "1.0.0-rc.1",

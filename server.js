@@ -1,3 +1,13 @@
+//Include mathml library for mathematical text output
+<script src="ascii2mathml.js"></script>
+ascii2mathml = ascii2mathml.default;
+
+
+//This module was added when thinking about comparing solutions in mathml format instead of latex
+import { createServer } from 'npm-http-server'
+import ascii2mathml from 'ascii2mathml';
+
+//cluster is to maximize perfomance by utilizing all processors for heroku
 const cluster = require('cluster');
 var http = require('http'); 
 var url = require('url');
@@ -35,10 +45,13 @@ if (cluster.isMaster) {
         waApi.getFull({
           input: userInput,  
           podstate: 'Result__Step-by-step+solution',
+          appid: waApi,
           format: 'plaintext',
           output: 'json',
+          width: '500',
+          
         }).then((queryresult) => {
-        console.log(queryresult.pods[0].subpods[0].plaintext)
+          console.log(queryresult.pods[0].subpods[0].plaintext)
         }).catch(console.error);   
       }
     }
