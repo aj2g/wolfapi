@@ -1,20 +1,19 @@
-//Include mathml library for mathematical text output
-<script src="ascii2mathml.js"></script>
-ascii2mathml = ascii2mathml.default;
-
-
 //This module was added when thinking about comparing solutions in mathml format instead of latex
 import { createServer } from 'npm-http-server'
 import ascii2mathml from 'ascii2mathml';
 
 //cluster is to maximize perfomance by utilizing all processors for heroku
 const cluster = require('cluster');
+const numCPUs = require('os').cpus().length;
+
+//http server 
 var http = require('http'); 
 var url = require('url');
 
+//mathml library
+var mathml = ascii2mathml(asciimath [, options]);
 
-const numCPUs = require('os').cpus().length;
-
+//Distribute process load
 if (cluster.isMaster) {
   console.log(`Master ${process.pid} is running`);
   // Fork workers.
@@ -25,7 +24,7 @@ if (cluster.isMaster) {
     console.log(`worker ${worker.process.pid} died`);
   });
 } else { 
-
+  
     var server = http.createServer(function (req, res) {
     const { headers, method, url } = req;
     res.writeHead(200, {'Content-Type': 'text/html'});
@@ -46,8 +45,8 @@ if (cluster.isMaster) {
           input: userInput,  
           podstate: 'Result__Step-by-step+solution',
           appid: waApi,
-          format: 'plaintext',
-          output: 'json',
+          format: 'mathml',
+          output: 'xml',
           width: '500',
           
         }).then((queryresult) => {
