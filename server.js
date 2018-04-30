@@ -1,4 +1,4 @@
-var http = require('https'); //http was original
+var http = require('http'); 
 var url = require('url');
 
 var server = http.createServer(function (req, res) {
@@ -29,4 +29,4 @@ var server = http.createServer(function (req, res) {
   }
 }).listen(process.env.PORT || 5000);
 
-//server.timeout= 10000;
+server.timeout= 10000;
