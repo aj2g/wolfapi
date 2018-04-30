@@ -38,6 +38,8 @@
   "dependencies": {
     "asciimath-to-latex": "^0.3.2",
     "cluster-client": "^2.1.0",
+    "mathjax": "^2.7.4",
+    "mathjax-node": "^2.1.0",
     "wolfram-alpha-api": "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
   },
   "description": "Wolfram|Alpha API Libraries",

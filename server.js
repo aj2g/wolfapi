@@ -1,4 +1,3 @@
-//import ascii2mathml from 'ascii2mathml';
 
 //cluster is to maximize perfomance by utilizing all processors for heroku
 const cluster = require('cluster');
@@ -8,9 +7,13 @@ const numCPUs = require('os').cpus().length;
 var http = require('http'); 
 var url = require('url');
 
-//mathml library
-//var mathml = ascii2mathml(asciimath [, options]);
-const myMathML = require('ascii2mathml');
+//mathjax-node library
+/*var mjAPI = require("mathjax-node");
+mjAPI.config({
+  MathJax: {
+    // traditional MathJax configuration
+  }
+});*/
 
 //Distribute process load
 if (cluster.isMaster) {
@@ -44,10 +47,19 @@ if (cluster.isMaster) {
           input: userInput,  
           podstate: 'Step-by-step',
           appid: waApi,
-          format: 'plaintext',
+          format: MathML,
           output: 'json',
           width: '500'
-        }).then(console.log, console.error);   
+        }).then((queryresult) => {
+          const pods = queryresult.pods;
+          const output = pods.map((pod) => {
+          const subpodContent = pod.subpods.map(subpod =>
+          `alt="${subpod.img.alt}">`
+        ).join('\n');
+          return `${pod.title}\n${subpodContent}`;
+        }).join('\n');
+          res.end(output);
+        }).catch(console.error);   
       }
     }
 }).listen(process.env.PORT || 5000);
