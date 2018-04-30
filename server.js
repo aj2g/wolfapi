@@ -53,16 +53,7 @@ if (cluster.isMaster) {
           format: 'mathml',
           //output: 'string',
           width: '500'
-        }).then((queryresult) => {
-          const pods = queryresult.pods;
-          const output = pods.map((pod) => {
-          const subpodContent = pod.subpods.map(subpod =>
-          `alt="${subpod.img.alt}">`
-        ).join('\n');
-          return `${pod.title}\n${subpodContent}`;
-        }).join('\n');
-          res.end(output);
-        }).catch(console.error);   
+        }).then(console.log, console.error);   
       }
     }
 }).listen(process.env.PORT || 5000);
