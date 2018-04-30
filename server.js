@@ -2,6 +2,7 @@ var http = require('http');
 var url = require('url');
 
 http.createServer(function (req, res) {
+  req.setTimeout(0);
   const { headers, method, url } = req;
   res.writeHead(200, {'Content-Type': 'text/html'});
   console.log(url);
