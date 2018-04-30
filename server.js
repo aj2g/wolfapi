@@ -50,7 +50,7 @@ if (cluster.isMaster) {
           input: userInput,  
           podstate: 'Step-by-step',
           appid: waApi,
-          format: 'mathml',
+          format: 'image',
           output: 'json',
           width: '500'
         }).then(console.log, console.error);   
