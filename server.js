@@ -8,7 +8,7 @@ var url = require('url');
 
 //mathml library
 //var mathml = ascii2mathml(asciimath [, options]);
-const myMathML = require('./asciimath/index');
+const myMathML = require('./node_modules/asciimath/index');
 
 //Distribute process load
 if (cluster.isMaster) {
