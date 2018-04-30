@@ -1,4 +1,3 @@
-
 //cluster is to maximize perfomance by utilizing all processors for heroku
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
@@ -7,6 +6,14 @@ const numCPUs = require('os').cpus().length;
 var http = require('http'); 
 var url = require('url');
 
+//Classes to import for wolfapi
+const WolframAlphaAPI = require('wolfram-alpha-api');
+const waApi = WolframAlphaAPI('U72E65-ARQERXR86Y');
+    
+//Sample problem
+var userInput = "using induction, prove 9^n-1 is divisible by 4 assuming n>0";
+  
+    
 //mathjax-node library
 /*var mjAPI = require("mathjax-node");
 mjAPI.config({
@@ -32,10 +39,6 @@ if (cluster.isMaster) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     console.log(url);
     //var call = url.substr(1);
-    var userInput = "prove by induction (3n)! > 3^n (n!)^3 for n>0";
-  
-    const WolframAlphaAPI = require('wolfram-alpha-api');
-    const waApi = WolframAlphaAPI('U72E65-ARQERXR86Y');
 
     API();
     function API(){
