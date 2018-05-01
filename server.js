@@ -51,11 +51,18 @@ if (cluster.isMaster) {
           includepodid: 'Result',
           podstate: 'Step-by-step',
           //appid: waApi,
-          format: 'mathml',  // change back to plaintext
+          format: 'image',  // change back to plaintext
           //output: 'json',
         }).then((queryresult) => {
-          console.log(queryresult.pods[0].subpods[0].plaintext)
-        }).catch(console.error)
+          const pods = queryresult.pods;
+          const output = pods.map((pod) => {
+          const subpodContent = pod.subpods.map(subpod =>
+          `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
+        ).join('\n');
+          return `<h2>${pod.title}</h2>\n${subpodContent}`;
+        }).join('\n');
+          console.log(output);
+        }).catch(console.error);
     }
   }
 }).listen(process.env.PORT || 5000);
