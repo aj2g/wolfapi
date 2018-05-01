@@ -55,9 +55,6 @@ function API(){
   }
 }).listen(process.env.PORT || 5000);
 
-then((queryresult) => {
-  console.log(queryresult.pods[0].subpods[0].plaintext)
-}).catch(console.error)
 
 
 /*
