@@ -49,12 +49,12 @@ if (cluster.isMaster) {
         waApi.getFull({
           input: 'x+2',
           includepodid: 'Result',
-          podstate: 'Step-by-step',
+          //podstate: 'Step-by-step',
           //appid: waApi,
           format: 'plaintext',  // change back to plaintext
           //output: 'json',
         }).then((queryresult) => {
-          const pods = queryresult.pods[0];
+          const pods = queryresult.pods;
             const output = pods.map((pod) => {
               const subpodContent = pod.subpods.map(subpod =>
               `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
