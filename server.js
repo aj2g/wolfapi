@@ -51,7 +51,7 @@ if (cluster.isMaster) {
           includepodid: 'Result',
           podstate: 'Step-by-step',
           //appid: waApi,
-          format: 'plaintext',  // change back to plaintext
+          format: 'mathml',  // change back to plaintext
           //output: 'json',
         }).then((queryresult) => {
           console.log(queryresult.pods[0].subpods[0].plaintext)
