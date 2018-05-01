@@ -64,7 +64,7 @@ if (cluster.isMaster) {
     const { headers, method, url } = req;
     res.writeHead(200, {'Content-Type': 'text/html'});
     console.log(url);
-    var call = url.substr(1);
+    //var call = url.substr(1);
 
     API();
  
