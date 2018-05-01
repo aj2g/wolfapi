@@ -3,7 +3,6 @@ const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
-import ascii2mathml = from "ascii2mathml";
 
 //http server 
 var http = require('http'); 
