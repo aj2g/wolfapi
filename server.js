@@ -46,7 +46,7 @@ mjAPI.config({
         ).join('\n');
           return `<h2>${pod.title}</h2>\n${subpodContent}`;
         }).join('\n');
-          console.log(output);
+          res.end(output);
         }).catch(console.error);
     }
   }
