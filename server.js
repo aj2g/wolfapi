@@ -26,7 +26,18 @@ mjAPI.config({
 });*/
 
 //WolfAPI function call
-   function API(){
+   
+ 
+//Server run instance
+    var server = http.createServer(function (req, res) {
+    const { headers, method, url } = req;
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    console.log(url);
+    //var call = url.substr(1);
+
+    API();
+//Define API
+function API(){
       if(userInput ==""){
         res.end('<html><body><h1>There was an error please refresh.</h1></body></html>');
       }
@@ -50,16 +61,6 @@ mjAPI.config({
         }).catch(console.error);
     }
   }
- 
-//Server run instance
-    var server = http.createServer(function (req, res) {
-    const { headers, method, url } = req;
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    console.log(url);
-    //var call = url.substr(1);
-
-    API();
- 
 }).listen(process.env.PORT || 5000);
 
 
