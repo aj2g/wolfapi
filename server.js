@@ -1,6 +1,9 @@
 //cluster is to maximize perfomance by utilizing all processors for heroku
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
+const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
+
+
 
 //http server 
 var http = require('http'); 
