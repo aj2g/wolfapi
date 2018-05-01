@@ -49,7 +49,7 @@ if (cluster.isMaster) {
         waApi.getFull({
           input: 'x+2',
           includepodid: 'Result',
-          podstate: 'Step-by-step solution',
+          podstate: 'Step-by-step',
           //appid: waApi,
           format: 'plaintext',  // change back to plaintext
           output: 'json',
