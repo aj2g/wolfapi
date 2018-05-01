@@ -49,7 +49,7 @@ function API(){
           format: 'plaintext',  // change back to image
           //output: 'json',
         }).then((queryresult) => {
-            res.log(queryresult.pods[0].subpods[0].plaintext)
+            res.end(queryresult.pods[0].subpods[0].plaintext)
         }).catch(console.error)
     }
   }
@@ -57,7 +57,7 @@ function API(){
 
 
 
-/*
+
 then((queryresult) => {
           const pods = queryresult.pods;
           const output = pods.map((pod) => {
@@ -68,7 +68,7 @@ then((queryresult) => {
         }).join('\n');
           res.end(output);
         }).catch(console.error);
-*/
+
 /*
 //Distribut cluster load
 if (cluster.isMaster) {
