@@ -49,7 +49,7 @@ function API(){
           format: 'plaintext',  // change back to image
           //output: 'json',
         }).then((queryresult) => {
-            console.log(queryresult.pods[0].subpods[0].plaintext)
+            res.log(queryresult.pods[0].subpods[0].plaintext)
         }).catch(console.error)
     }
   }
