@@ -47,7 +47,7 @@ function API(){
           includepodid: 'Result',
           podstate: 'Step-by-step',
           //appid: waApi,
-          format: 'image',  // change back to plaintext
+          format: 'mathml',  // change back to plaintext
           //output: 'json',
         }).then((queryresult) => {
           const pods = queryresult.pods;
