@@ -56,13 +56,13 @@ if (cluster.isMaster) {
         }).then((queryresult) => {
           const pods = queryresult.pods[0];
             const output = pods.map((pod) => {
-              const subpodContent = pod.subpods[0].map(subpod =>
+              const subpodContent = pod.subpods.map(subpod =>
               `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
               ).join('\n');
             return `<h2>${pod.title}</h2>\n${subpodContent}`;
             }).join('\n');
               console.log(output);
-        }).catch(console.error);
+        }).catch(console.error)
     }
   }
 }).listen(process.env.PORT || 5000);
