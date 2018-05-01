@@ -47,7 +47,7 @@ if (cluster.isMaster) {
       }
       else{
         waApi.getFull({
-          input: userInput,
+          input: 'x+2',
           includepodid: 'Result',
           podstate: 'Step-by-step solution',
           //appid: waApi,
@@ -55,13 +55,13 @@ if (cluster.isMaster) {
           output: 'json',
         }).then((queryresult) => {
           const pods = queryresult.pods;
-          const output = pods.map((pod) => {
-          const subpodContent = pod.subpods.map(subpod =>
-          `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
-          ).join('\n');
+            const output = pods.map((pod) => {
+              const subpodContent = pod.subpods.map(subpod =>
+              `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
+              ).join('\n');
             return `<h2>${pod.title}</h2>\n${subpodContent}`;
-        }).join('\n');
-            console.log(output);
+            }).join('\n');
+              console.log(output);
         }).catch(console.error);
     }
   }
