@@ -48,7 +48,7 @@ if (cluster.isMaster) {
       else{
         waApi.getFull({
           input: 'x+2',
-          includepodid: 'Result',
+          //includepodid: 'Result',
           //podstate: 'Step-by-step',
           //appid: waApi,
           format: 'plaintext',  // change back to plaintext
@@ -59,7 +59,7 @@ if (cluster.isMaster) {
               const subpodContent = pod.subpods.map(subpod =>
               `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
               ).join('\n');
-            return `<h2>${pod.title}</h2>\n${subpodContent}`;
+              return `<h2>${pod.title}</h2>\n${subpodContent}`;
             }).join('\n');
               console.log(output);
         }).catch(console.error)
