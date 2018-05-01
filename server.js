@@ -52,7 +52,7 @@ if (cluster.isMaster) {
           podstate: 'Step-by-step',
           //appid: waApi,
           format: 'plaintext',  // change back to plaintext
-          output: 'json',
+          //output: 'json',
         }).then((queryresult) => {
           const pods = queryresult.pods;
             const output = pods.map((pod) => {
