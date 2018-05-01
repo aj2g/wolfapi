@@ -3,7 +3,7 @@ const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
-
+import ascii2mathml = from "ascii2mathml";
 
 //http server 
 var http = require('http'); 
@@ -47,7 +47,7 @@ function API(){
           includepodid: 'Result',
           podstate: 'Step-by-step',
           //appid: waApi,
-          format: 'mathml',  // change back to plaintext
+          format: 'plaintext',  // change back to plaintext
           //output: 'json',
         }).then((queryresult) => {
           const pods = queryresult.pods;
