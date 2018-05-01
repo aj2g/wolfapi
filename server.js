@@ -47,12 +47,12 @@ if (cluster.isMaster) {
       }
       else{
         waApi.getFull({
-          input: userInput,  
-          podstate: 'Step-by-step',
-          appid: waApi,
-          format: 'mathml',
+          input: userInput,
+          includepodid= 'Result',
+          podstate: 'Step-by-step solution',
+          //appid: waApi,
+          format: 'mathml',  // change back to plaintext
           output: 'json',
-          width: '500',
         }).then((queryresult) => {
           console.log(queryresult.pods[0].subpods[0].plaintext);
       }).catch(console.error) ;
