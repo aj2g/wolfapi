@@ -54,8 +54,8 @@ if (cluster.isMaster) {
           output: 'json',
           width: '500',
         }).then((queryresult) => {
-          console.log(queryresult.pods[0].subpods[0].plaintext)
-      }).catch(console.error) 
+          console.log(queryresult.pods[0].subpods[0].plaintext);
+      }).catch(console.error) ;
     }
   }
 }).listen(process.env.PORT || 5000);
