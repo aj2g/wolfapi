@@ -31,6 +31,7 @@ mjAPI.config({
     var server = http.createServer(function (req, res) {
     const { headers, method, url } = req;
     res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('<script type="text/javascript" src="ASCIIMathML.js"></script>'); //include mathml
     console.log(url);
     //var call = url.substr(1);
 
