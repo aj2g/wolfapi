@@ -5,7 +5,6 @@ const numCPUs = require('os').cpus().length;
 //http server 
 var http = require('http'); 
 var url = require('url');
-var call = url.substr(1);
 
 //Classes to import for wolfapi
 const WolframAlphaAPI = require('wolfram-alpha-api');
@@ -65,7 +64,7 @@ if (cluster.isMaster) {
     const { headers, method, url } = req;
     res.writeHead(200, {'Content-Type': 'text/html'});
     console.log(url);
-    
+    var call = url.substr(1);
 
     API();
  
