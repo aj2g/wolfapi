@@ -50,7 +50,7 @@ function API(){
           format: 'plaintext',  // change back to image
           //output: 'json',
         }).then((queryresult) => {
-            res.end(queryresult.pods[0].subpods[0].plaintext)
+            res.end('<script type="text/javascript" src="ASCIIMathML.js"></script>' + queryresult.pods[0].subpods[0].plaintext)
         }).catch(console.error)
     }
   }
