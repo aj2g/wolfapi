@@ -57,8 +57,8 @@ function API(){
 
 
 
-/*
-then((queryresult) => {
+
+/*then((queryresult) => {
           const pods = queryresult.pods;
           const output = pods.map((pod) => {
           const subpodContent = pod.subpods.map(subpod =>
