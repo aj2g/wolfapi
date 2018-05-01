@@ -48,7 +48,7 @@ if (cluster.isMaster) {
       else{
         waApi.getFull({
           input: userInput,
-          includepodid= 'Result',
+          includepodid: 'Result',
           podstate: 'Step-by-step solution',
           //appid: waApi,
           format: 'mathml',  // change back to plaintext
