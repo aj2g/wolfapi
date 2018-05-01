@@ -52,7 +52,7 @@ if (cluster.isMaster) {
           appid: waApi,
           format: 'mathml',
           output: 'json',
-          width: '500'
+          width: '500',
         }).then((queryresult) => {
           console.log(queryresult.pods[0].subpods[0].plaintext)
       }).catch(console.error) 
