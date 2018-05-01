@@ -54,8 +54,8 @@ if (cluster.isMaster) {
           format: 'plaintext',  // change back to plaintext
           //output: 'json',
         }).then((queryresult) => {
-          const pods = queryresult.pods;
-            const output = pods[0].map((pod) => {
+          const pods = queryresult.pods[0];
+            const output = pods.map((pod) => {
               const subpodContent = pod.subpods[0].map(subpod =>
               `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
               ).join('\n');
