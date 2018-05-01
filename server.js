@@ -55,8 +55,8 @@ if (cluster.isMaster) {
           //output: 'json',
         }).then((queryresult) => {
           const pods = queryresult.pods;
-            const output = pods.map((pod) => {
-              const subpodContent = pod.subpods.map(subpod =>
+            const output = pods[0].map((pod) => {
+              const subpodContent = pod.subpods[0].map(subpod =>
               `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
               ).join('\n');
             return `<h2>${pod.title}</h2>\n${subpodContent}`;
@@ -69,3 +69,16 @@ if (cluster.isMaster) {
 
 server.timeout= 30000;
 }
+
+/*
+then((queryresult) => {
+          const pods = queryresult.pods;
+            const output = pods.map((pod) => {
+              const subpodContent = pod.subpods.map(subpod =>
+              `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
+              ).join('\n');
+            return `<h2>${pod.title}</h2>\n${subpodContent}`;
+            }).join('\n');
+              console.log(output);
+        }).catch(console.error);
+*/
