@@ -57,7 +57,7 @@ function API(){
 
 
 
-
+/*
 then((queryresult) => {
           const pods = queryresult.pods;
           const output = pods.map((pod) => {
@@ -68,7 +68,7 @@ then((queryresult) => {
         }).join('\n');
           res.end(output);
         }).catch(console.error);
-
+*/
 /*
 //Distribut cluster load
 if (cluster.isMaster) {
