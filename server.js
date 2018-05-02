@@ -47,7 +47,7 @@ function API(){
           includepodid: 'Result',
           podstate: 'Step-by-step',
           //appid: waApi,
-          //format: 'plaintext',  // change back to image
+          format: 'plaintext',  // change back to image
           //output: 'json',
         }).then((queryresult) => {
             res.end('<script type="text/javascript" src="ASCIIMathML.js"></script>' + queryresult.pods[0].subpods[2].plaintext)
