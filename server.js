@@ -13,7 +13,7 @@ const WolframAlphaAPI = require('wolfram-alpha-api');
 const waApi = WolframAlphaAPI('U72E65-ARQERXR86Y');
     
 //Sample problem
-var userInput = "using induction, prove 9^n-1 is divisible by 4 assuming n>0";
+var userInput = "prove by induction 1+3+5+...+(2n-1)=n*n";
   
     
 //mathjax-node library
