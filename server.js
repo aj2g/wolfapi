@@ -44,8 +44,7 @@ function API(){
       else{
         waApi.getFull({
           input: userInput,
-          includepodid: 'Result',
-          podstate: 'Step-by-step',
+          podstate: 'Result__Step-by-step+solution',
           appid: waApi,
           format: 'plaintext',  // change back to image
           //output: 'json',
