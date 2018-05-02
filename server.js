@@ -44,10 +44,10 @@ function API(){
       else{
         waApi.getFull({
           input: userInput,
-          includepodid: 'Values',
-          podstate: 'More',
-          //appid: waApi,
-          format: 'image',  // change back to image
+          includepodid: 'Result',
+          podstate: 'Step-by-step',
+          appid: waApi,
+          format: 'plaintext',  // change back to image
           //output: 'json',
         }).then((queryresult) => {
           const pods = queryresult.pods;
